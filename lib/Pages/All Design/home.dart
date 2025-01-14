@@ -10,16 +10,16 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> imageList = [
-      'assets/images/image1.jpg',
-      'assets/images/image2.jpg',
-      'assets/images/image3.jpg',
-      'assets/images/image4.jpg',
-      'assets/images/image5.jpg',
-      'assets/images/image6.jpg',
-      'assets/images/image7.jpg',
-      'assets/images/image8.jpg',
-      'assets/images/image9.jpg',
-      'assets/images/image10.jpg',
+      'assets/images/image 1.jpg',
+      'assets/images/image 2.jpg',
+      'assets/images/image 3.jpg',
+      'assets/images/image 4.jpg',
+      'assets/images/image 5.jpg',
+      'assets/images/image 6.jpg',
+      'assets/images/image 7.jpg',
+      'assets/images/image 8.jpg',
+      'assets/images/image 9.jpg',
+      'assets/images/image 10.jpg',
     ];
     return Scaffold(
       body: LayoutBuilder(
