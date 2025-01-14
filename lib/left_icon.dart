@@ -24,11 +24,11 @@ class LeftIcon extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           gradient: LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
+            begin: Alignment.bottomLeft, // Start at bottom-left
+            end: Alignment.topRight, // End at top-right
             colors: [
-              Colors.blue.shade800, // Deep blue (bottom left)
-              Colors.blue.shade200, // Light blue (top right)
+              Color(0xFFD0D8E8), // Light blueish-grey (bottom-left)
+              Color(0xFF64759B), // Darker blue-grey (top-right)
             ],
           ),
           boxShadow: [
@@ -46,7 +46,7 @@ class LeftIcon extends StatelessWidget {
             child: Icon(
               icn.icon,
               size: icnSize,
-              color: const Color.fromARGB(255, 236, 222, 220),
+              color: const Color.fromARGB(255, 243, 238, 238),
             )),
       ),
     );
