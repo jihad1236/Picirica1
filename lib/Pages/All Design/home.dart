@@ -34,6 +34,16 @@ class _HomeState extends State<Home> {
       "Books",
       "Sports",
     ];
+    final List<String> imagePaths = [
+      'assets/images/image 11.png',
+      'assets/images/image 12.jpg',
+      'assets/images/image 13.jpg',
+      'assets/images/image 14.jpg',
+      'assets/images/image 13.jpg',
+      'assets/images/image 14.jpg',
+      'assets/images/image 14.jpg',
+      'assets/images/image 14.jpg',
+    ];
     final List<String> brands = [
       "Apple",
       "Samsung",
@@ -241,7 +251,6 @@ class _HomeState extends State<Home> {
                           width: MediaQuery.of(context).size.width,
                           color: Colors.black38,
                         ),
-
                         SizedBox(
                           height: 10,
                         ),
@@ -249,166 +258,99 @@ class _HomeState extends State<Home> {
                         Row(
                           children: [
                             Expanded(
-                              child: CarouselSlider(
-                                options: CarouselOptions(
-                                  height: MediaQuery.of(context).size.height/1.4, // Slider height
-                                  autoPlay: true, // Automatic sliding
-                                  autoPlayInterval: Duration(
-                                      seconds: 3), // Interval between slides
-                                  enlargeCenterPage:
-                                      false, // Highlight the center image
-                                  viewportFraction:
-                                      1.0, // Size of images relative to viewport
-                                ),
-                                items: imageList.map((imagePath) {
-                                  return Builder(
-                                    builder: (BuildContext context) {
-                                      return Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
-                                        margin: EdgeInsets.symmetric(
-                                            horizontal: 8.0),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color:
-                                                  Colors.black.withOpacity(0.3),
-                                              blurRadius: 5,
-                                              spreadRadius: 2,
-                                            ),
-                                          ],
-                                        ),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          child: Image.asset(
-                                            imagePath,
-                                            fit: BoxFit.cover,
+                              child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: CarouselSlider(
+                                  options: CarouselOptions(
+                                    height: MediaQuery.of(context)
+                                        .size
+                                        .height, // Slider height
+                                    autoPlay: true, // Automatic sliding
+                                    autoPlayInterval: Duration(
+                                        seconds: 3), // Interval between slides
+                                    enlargeCenterPage:
+                                        false, // Highlight the center image
+                                    viewportFraction:
+                                        1.0, // Size of images relative to viewport
+                                  ),
+                                  items: imageList.map((imagePath) {
+                                    return Builder(
+                                      builder: (BuildContext context) {
+                                        return Container(
+                                          width:
+                                              MediaQuery.of(context).size.width,
+                                          margin: EdgeInsets.symmetric(
+                                              horizontal: 8.0),
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black
+                                                    .withOpacity(0.3),
+                                                blurRadius: 5,
+                                                spreadRadius: 2,
+                                              ),
+                                            ],
                                           ),
-                                        ),
-                                      );
-                                    },
-                                  );
-                                }).toList(),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.asset(
+                                              imagePath,
+                                              fit: BoxFit.fill,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  }).toList(),
+                                ),
                               ),
                             ),
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 200,
-                                    width: 200,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blueAccent,
-                                      borderRadius: BorderRadius.circular(15),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.3),
-                                          blurRadius: 10,
-                                          spreadRadius: 3,
-                                          offset:
-                                              Offset(4, 4), // Shadow position
-                                        ),
-                                      ],
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Image.asset(
-                                        'assets/images/image 11.png',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
+                            Padding(
+                              padding: const EdgeInsets.all(20.0),
+                              child: Container(
+                                height: MediaQuery.of(context).size.height,
+                                width: MediaQuery.of(context).size.width / 3,
+                                child: GridView.builder(
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2, // Number of columns
+                                    crossAxisSpacing:
+                                        20, // Spacing between columns
+                                    mainAxisSpacing: 20, // Spacing between rows
+                                    childAspectRatio:
+                                        1, // Aspect ratio of each grid item
                                   ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 200,
-                                    width: 200,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blueAccent,
-                                      borderRadius: BorderRadius.circular(15),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.3),
-                                          blurRadius: 10,
-                                          spreadRadius: 3,
-                                          offset:
-                                              Offset(4, 4), // Shadow position
-                                        ),
-                                      ],
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Image.asset(
-                                        'assets/images/image 12.jpg',
-                                        fit: BoxFit.cover,
+                                  itemCount: imagePaths.length,
+                                  itemBuilder: (context, index) {
+                                    return Container(
+                                      decoration: BoxDecoration(
+                                        color: Colors.blueAccent,
+                                        borderRadius: BorderRadius.circular(15),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color:
+                                                Colors.black.withOpacity(0.3),
+                                            blurRadius: 10,
+                                            spreadRadius: 3,
+                                            offset: const Offset(
+                                                4, 4), // Shadow position
+                                          ),
+                                        ],
                                       ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 200,
-                                    width: 200,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blueAccent,
-                                      borderRadius: BorderRadius.circular(15),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.3),
-                                          blurRadius: 10,
-                                          spreadRadius: 3,
-                                          offset:
-                                              Offset(4, 4), // Shadow position
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Image.asset(
+                                          imagePaths[index],
+                                          fit: BoxFit.cover,
                                         ),
-                                      ],
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Image.asset(
-                                        'assets/images/image 13.jpg',
-                                        fit: BoxFit.cover,
                                       ),
-                                    ),
-                                  ),
+                                    );
+                                  },
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Container(
-                                    height: 200,
-                                    width: 200,
-                                    decoration: BoxDecoration(
-                                      color: Colors.blueAccent,
-                                      borderRadius: BorderRadius.circular(15),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Colors.black.withOpacity(0.3),
-                                          blurRadius: 10,
-                                          spreadRadius: 3,
-                                          offset:
-                                              Offset(4, 4), // Shadow position
-                                        ),
-                                      ],
-                                    ),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(15),
-                                      child: Image.asset(
-                                        'assets/images/image 14.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ],
                         ),
