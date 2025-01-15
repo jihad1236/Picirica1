@@ -2,11 +2,17 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:picirica1/Pages/All%20Design/product_card.dart';
 import 'package:picirica1/left_icon.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({super.key});
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final List<String> imageList = [
@@ -21,6 +27,64 @@ class Home extends StatelessWidget {
       'assets/images/image 9.jpg',
       'assets/images/image 10.jpg',
     ];
+
+    final List<String> categories = [
+      "Electronics",
+      "Fashion",
+      "Books",
+      "Sports",
+    ];
+    final List<String> brands = [
+      "Apple",
+      "Samsung",
+      "Microsoft",
+      "Google",
+      "Amazon",
+      "Lenovo",
+      "Dell",
+      "Apple",
+      "Samsung",
+      "Microsoft",
+      "Google",
+      "Amazon",
+      "Lenovo",
+      "Dell",
+      "Apple",
+      "Samsung",
+      "Microsoft",
+      "Google",
+      "Amazon",
+      "Lenovo",
+      "Dell",
+      "Google",
+      "Amazon",
+      "Lenovo",
+      "Dell",
+    ];
+
+    final List<Map<String, dynamic>> products = [
+      {
+        "name": "iPhone 14 Pro",
+        "description": "Apple's flagship smartphone with advanced features.",
+        "price": 999.99,
+        "isFavorite": false,
+      },
+      {
+        "name": "Samsung Galaxy S23",
+        "description": "High-performance Android phone with great camera.",
+        "price": 899.99,
+        "isFavorite": true,
+      },
+      {
+        "name": "MacBook Air M2",
+        "description": "Apple's lightweight laptop with the M2 chip.",
+        "price": 1500.00,
+        "isFavorite": false,
+      },
+    ];
+
+    String selectedCategory = "";
+
     return Scaffold(
       body: LayoutBuilder(
         builder: (context, constraints) {
@@ -38,7 +102,7 @@ class Home extends StatelessWidget {
                 // Sidebar Container
                 Container(
                   height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width / 28,
+                  width: MediaQuery.of(context).size.width / 23,
                   color: const Color.fromARGB(255, 255, 255, 255),
                   child: SingleChildScrollView(
                     child: Column(
@@ -187,7 +251,7 @@ class Home extends StatelessWidget {
                             Expanded(
                               child: CarouselSlider(
                                 options: CarouselOptions(
-                                  height: 430.0, // Slider height
+                                  height: MediaQuery.of(context).size.height/1.4, // Slider height
                                   autoPlay: true, // Automatic sliding
                                   autoPlayInterval: Duration(
                                       seconds: 3), // Interval between slides
@@ -201,7 +265,7 @@ class Home extends StatelessWidget {
                                     builder: (BuildContext context) {
                                       return Container(
                                         width:
-                                            MediaQuery.of(context).size.width/1.8,
+                                            MediaQuery.of(context).size.width,
                                         margin: EdgeInsets.symmetric(
                                             horizontal: 8.0),
                                         decoration: BoxDecoration(
@@ -347,6 +411,57 @@ class Home extends StatelessWidget {
                               ],
                             ),
                           ],
+                        ),
+                        Container(
+                            height: MediaQuery.of(context).size.height / 10,
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(),
+                            child: ListView.builder(
+                              itemBuilder: (context, index) => Container(
+                                margin: const EdgeInsets.all(10.0),
+                                child: Text(
+                                  brands[index],
+                                  style: const TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold,
+                                      color:
+                                          Color.fromARGB(255, 186, 186, 186)),
+                                ),
+                              ),
+                              itemCount: brands.length,
+                              scrollDirection: Axis.horizontal,
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            color: Colors.grey[200],
+                            height: 400,
+                            width: double.infinity,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: products.length,
+                              padding: const EdgeInsets.all(8),
+                              itemBuilder: (context, index) {
+                                final product = products[index];
+                                return Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: ProductCard(
+                                    imageString: "assets/images/image 13.jpg",
+                                    name: product["name"],
+                                    description: product["description"],
+                                    price: product["price"],
+                                    isFavorite: true,
+                                    onFavoriteToggle: () {
+                                      setState(() {
+                                        product["isFavorite"] =
+                                            !product["isFavorite"];
+                                      });
+                                    },
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
                         ),
                       ],
                     ),
