@@ -56,6 +56,10 @@ class _HomeState extends State<Home> {
       "Amazon",
       "Lenovo",
       "Dell",
+      "Google",
+      "Amazon",
+      "Lenovo",
+      "Dell",
     ];
 
     final List<Map<String, dynamic>> products = [
@@ -422,7 +426,7 @@ class _HomeState extends State<Home> {
                                       fontSize: 30,
                                       fontWeight: FontWeight.bold,
                                       color:
-                                          Color.fromARGB(255, 205, 204, 204)),
+                                          Color.fromARGB(255, 186, 186, 186)),
                                 ),
                               ),
                               itemCount: brands.length,
