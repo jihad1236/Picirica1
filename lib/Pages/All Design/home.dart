@@ -187,21 +187,21 @@ class Home extends StatelessWidget {
                             Expanded(
                               child: CarouselSlider(
                                 options: CarouselOptions(
-                                  height: 550.0, // Slider height
+                                  height: 430.0, // Slider height
                                   autoPlay: true, // Automatic sliding
                                   autoPlayInterval: Duration(
                                       seconds: 3), // Interval between slides
                                   enlargeCenterPage:
-                                      true, // Highlight the center image
+                                      false, // Highlight the center image
                                   viewportFraction:
-                                      0.8, // Size of images relative to viewport
+                                      1.0, // Size of images relative to viewport
                                 ),
                                 items: imageList.map((imagePath) {
                                   return Builder(
                                     builder: (BuildContext context) {
                                       return Container(
                                         width:
-                                            MediaQuery.of(context).size.width,
+                                            MediaQuery.of(context).size.width/1.8,
                                         margin: EdgeInsets.symmetric(
                                             horizontal: 8.0),
                                         decoration: BoxDecoration(
@@ -235,8 +235,8 @@ class Home extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    height: 250,
-                                    width: 250,
+                                    height: 200,
+                                    width: 200,
                                     decoration: BoxDecoration(
                                       color: Colors.blueAccent,
                                       borderRadius: BorderRadius.circular(15),
@@ -253,7 +253,7 @@ class Home extends StatelessWidget {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: Image.asset(
-                                        'assets/images/image11.png',
+                                        'assets/images/image 11.png',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -262,8 +262,8 @@ class Home extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    height: 250,
-                                    width: 250,
+                                    height: 200,
+                                    width: 200,
                                     decoration: BoxDecoration(
                                       color: Colors.blueAccent,
                                       borderRadius: BorderRadius.circular(15),
@@ -280,7 +280,7 @@ class Home extends StatelessWidget {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: Image.asset(
-                                        'assets/images/image12.jpg',
+                                        'assets/images/image 12.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -293,8 +293,8 @@ class Home extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    height: 250,
-                                    width: 250,
+                                    height: 200,
+                                    width: 200,
                                     decoration: BoxDecoration(
                                       color: Colors.blueAccent,
                                       borderRadius: BorderRadius.circular(15),
@@ -311,7 +311,7 @@ class Home extends StatelessWidget {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: Image.asset(
-                                        'assets/images/image13.jpg',
+                                        'assets/images/image 13.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
@@ -320,8 +320,8 @@ class Home extends StatelessWidget {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Container(
-                                    height: 250,
-                                    width: 250,
+                                    height: 200,
+                                    width: 200,
                                     decoration: BoxDecoration(
                                       color: Colors.blueAccent,
                                       borderRadius: BorderRadius.circular(15),
@@ -338,7 +338,7 @@ class Home extends StatelessWidget {
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: Image.asset(
-                                        'assets/images/image14.jpg',
+                                        'assets/images/image 14.jpg',
                                         fit: BoxFit.cover,
                                       ),
                                     ),
