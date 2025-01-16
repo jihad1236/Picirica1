@@ -14,6 +14,7 @@ class LeftIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     // Get screen width and height
     double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -45,7 +46,6 @@ class LeftIcon extends StatelessWidget {
                 screenWidth * 0.1), // Rounded corners based on screen width
             child: Icon(
               icn.icon,
-              size: icnSize,
               color: const Color.fromARGB(255, 243, 238, 238),
             )),
       ),
