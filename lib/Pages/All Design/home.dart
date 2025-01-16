@@ -428,6 +428,7 @@ class _HomeState extends State<Home> {
                         Row(
                           children: [
                             Expanded(
+<<<<<<< HEAD
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: CarouselSlider(
@@ -462,6 +463,45 @@ class _HomeState extends State<Home> {
                                                 spreadRadius: 2,
                                               ),
                                             ],
+=======
+                              child: CarouselSlider(
+                                options: CarouselOptions(
+                                  height: MediaQuery.of(context).size.height/1.4, // Slider height
+                                  autoPlay: true, // Automatic sliding
+                                  autoPlayInterval: Duration(
+                                      seconds: 3), // Interval between slides
+                                  enlargeCenterPage:
+                                      false, // Highlight the center image
+                                  viewportFraction:
+                                      1.0, // Size of images relative to viewport
+                                ),
+                                items: imageList.map((imagePath) {
+                                  return Builder(
+                                    builder: (BuildContext context) {
+                                      return Container(
+                                        width:
+                                            MediaQuery.of(context).size.width/1.8,
+                                        margin: EdgeInsets.symmetric(
+                                            horizontal: 8.0),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.black.withOpacity(0.3),
+                                              blurRadius: 5,
+                                              spreadRadius: 2,
+                                            ),
+                                          ],
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          child: Image.asset(
+                                            imagePath,
+                                            fit: BoxFit.cover,
+>>>>>>> 1570456ff5eafca83ffa7209e4357e040f17ea2f
                                           ),
                                           child: ClipRRect(
                                             borderRadius:
