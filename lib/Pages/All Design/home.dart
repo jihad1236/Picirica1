@@ -586,8 +586,8 @@ class _HomeState extends State<Home> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
-                            color: Colors.red,
-                            height: 800,
+                           
+                            height: 400,
                             width: double.infinity,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
