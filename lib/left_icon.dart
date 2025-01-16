@@ -2,33 +2,33 @@ import 'package:flutter/material.dart';
 
 class LeftIcon extends StatelessWidget {
   final Icon icn;
-  final double icnSize;
+  final String text;
 
   const LeftIcon({
     super.key,
     required this.icn,
-    required this.icnSize,
+    required this.text,
   });
 
   @override
   Widget build(BuildContext context) {
     // Get screen width and height
-    double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: screenHeight / 20, // Container height is based on screen height
+        height: screenHeight / 18, // Container height is based on screen height
         width: screenWidth, // Full width of the screen
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.bottomLeft, // Start at bottom-left
             end: Alignment.topRight, // End at top-right
             colors: [
-              Color(0xFFD0D8E8), // Light blueish-grey (bottom-left)
-              Color(0xFF64759B), // Darker blue-grey (top-right)
+              Color.fromARGB(
+                  255, 58, 58, 58), // Light blueish-grey (bottom-left)
+              Color.fromARGB(255, 58, 58, 58), // Darker blue-grey (top-right)
             ],
           ),
           boxShadow: [
