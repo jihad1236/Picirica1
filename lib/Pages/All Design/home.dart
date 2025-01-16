@@ -285,7 +285,7 @@ class _HomeState extends State<Home> {
                                               BorderRadius.circular(10),
                                           child: Image.asset(
                                             imagePath,
-                                            fit: BoxFit.cover,
+                                            fit: BoxFit.fill,
                                           ),
                                         ),
                                       );
